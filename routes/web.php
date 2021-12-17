@@ -22,3 +22,7 @@ Route :: get('/edit-post/{id}', [AdminCrud::class, 'editpost'])->name('edit.post
 Route :: post('update-post',[AdminCrud::class, 'updatepost'])->name('update-post');
 Route :: get('/delete-post/{id}', [AdminCrud::class, 'deletepost'])->name('delete-post');
 
+
+/// query builder 
+Route :: get('/db', [AdminCrud::class, 'db']);
+

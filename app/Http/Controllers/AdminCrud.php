@@ -10,8 +10,8 @@ class AdminCrud extends Controller
         return view('data_insert');
     }
     public function addpost(Request $request){
-        DB:: table('posts')->insert([
-            'name' => $request->name ,
+        DB:: table('posts')->insert([ /// DB query builder 
+            'name' => $request->Name ,
             'phone' => $request->phone ,
             'quantity' => $request->quantity ,
             'price' => $request->price 
@@ -62,5 +62,26 @@ class AdminCrud extends Controller
     public function deletepost($id){
         $posts = DB::table('posts')->where('id', $id)->delete();
         return back()->with('post_deleted','Post has been deleted successfully!'); 
+    }
+    ///Query builder Practice 
+
+    public function db(){
+        //$posts = DB::table('posts')->get();
+        //$posts = DB::table('posts')->where('id', 1)->first();
+        //$posts = DB::table('posts')->where('id', 1)->get();
+        //$posts = DB::table('posts')->where('id', 1)->pluck('price','id','name','quantity'); ///pluck() function 
+        //$posts = DB::table('posts')->where('id', 1)->lists('id' , 'name')->toArray(); ///pluck() function 
+        ///works for a single row 
+        //return view('db_query',compact('posts'))
+
+        //$posts = DB::table('posts')->count() ; number of row returns this function 
+        //$posts = DB::table('posts')->avg('price');
+        //$posts = DB::table('posts')->sum('price');
+        // DB::table('posts')->insert([
+        //     'name' =>'Rakibul' , 'phone' => 0 , 'quantity' => '12' , 'price' => '12'
+        // ]);
+        $posts = DB::table('posts')->get();
+        //$posts = DB::table('posts')->where('id', 13)->delete();
+         return($posts);
     }
 }

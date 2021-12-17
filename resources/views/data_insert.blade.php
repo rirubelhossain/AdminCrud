@@ -31,7 +31,7 @@
                         <div class="card-body">
                         <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="fname" name= "name">
+                                <input type="text" class="form-control" id="fname" name= "Name">
                             </div>
                             <div class="mb-3">
                                 <label for="text" class="form-label">Phone</label>  
